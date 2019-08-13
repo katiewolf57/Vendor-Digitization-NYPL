@@ -1,8 +1,8 @@
 # Vendor-Digitization-NYPL
 
-These are the tools I use when doing vendor digitization work at New York Public Library, as well as a few other scripts that have come in handy on occasions. 
+These are the tools I use when doing vendor digitization work at New York Public Library, as well as a few other scripts that have come in handy on occasion. 
 
-They are roughly organized into the various functions they serve, but some scripts can be used for a variety of applications. 
+They are roughly organized into the functions they serve, but some scripts can be used for a variety of applications. 
 CSV_and_File_Counting
 - - Scripts that will (recursively) get a variety of information from the file names and folder structures, and then (typically) give you an output in the form of a CSV. These scripts are mostly used for creating CSVs for metadata imports on to NYPL's metadata management system. 
 
