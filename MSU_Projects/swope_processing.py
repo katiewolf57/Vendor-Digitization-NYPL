@@ -21,19 +21,15 @@ file_list = file_list.rstrip()
 
 ## Drag over the place where you'd like to search for files. This WILL search through multiple layers of folders ##
 
-# out_dir = input("\nDrag the folder containing the files you'd like to move here:\n")
-# out_dir = out_dir.replace("\\","")
-# out_dir = out_dir.rstrip()
-
-out_dir = "/Volumes/ice/saskia/SwopeDriveAll"
+out_dir = input("\nDrag the folder containing the files you'd like to move here:\n")
+out_dir = out_dir.replace("\\","")
+out_dir = out_dir.rstrip()
 
 ## Drag over the folder where you'd like the files to end up ##
 
 in_dir = input("\nDrag the folder you're moving the files to here:\n")
 in_dir = in_dir.replace("\\","")
 in_dir = in_dir.rstrip()
-
-# in_dir = "/Users/diunt-02/Desktop/MSU_Projects/Swope/AugustSwope_2019"
 
 ## READING THE FILES ##
 ## Opening up the .TXT file and renaming the files to match the format found in the Swope Drive ##
