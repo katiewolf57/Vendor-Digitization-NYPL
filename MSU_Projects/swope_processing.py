@@ -21,11 +21,10 @@ file_list = file_list.rstrip()
 
 ## Drag over the place where you'd like to search for files. This WILL search through multiple layers of folders ##
 
-# out_dir = input("\nDrag the folder containing the files you'd like to move here:\n")
-# out_dir = out_dir.replace("\\","")
-# out_dir = out_dir.rstrip()
+out_dir = input("\nDrag the folder containing the files you'd like to move here:\n")
+out_dir = out_dir.replace("\\","")
+out_dir = out_dir.rstrip()
 
-out_dir = "/Volumes/ice/saskia/SwopeDriveAll"
 
 ## Drag over the folder where you'd like the files to end up ##
 
@@ -33,7 +32,6 @@ in_dir = input("\nDrag the folder you're moving the files to here:\n")
 in_dir = in_dir.replace("\\","")
 in_dir = in_dir.rstrip()
 
-# in_dir = "/Users/diunt-02/Desktop/MSU_Projects/Swope/AugustSwope_2019"
 
 ## READING THE FILES ##
 ## Opening up the .TXT file and renaming the files to match the format found in the Swope Drive ##
@@ -122,7 +120,7 @@ for file in moving_files:
         subprocess.call("rsync -ratvhP " + str(file) + " " + str(in_dir), shell=True)
 
 ## REFORMATTING THE FILES ##
-print("\nConverting files to TIFs")
+print("\nConverting files to TIFs.")
 for file in os.scandir(in_dir):
     jpg = os.path.join(in_dir, file)
     if jpg[-4:] == ".jpg":
@@ -130,10 +128,12 @@ for file in os.scandir(in_dir):
         subprocess.call("rm -rf " + jpg, shell=True)
 
 ## RE-RENAMING THE FILES ##
+print("\nRenaming the files.")
 for file in os.listdir(in_dir):
     if file[-4:] == ".tif":
         full_file = os.path.join(in_dir, file)
         new_name = in_dir+ "/swope_" + file.lstrip("0")
+        new_name = new_name.replace(".tif", "s.tif")
         os.rename(full_file, new_name)
 
 ## COMPARING ORIGINAL LIST TO NEW FILES ##
@@ -154,7 +154,7 @@ else:
 
 
 # GIVING A SUMMARY ##
-in_count = len(out_files)
+in_count = len(lines)
 duplicates_count = len(dupes)
 moved_count = len(moving_files)
 missing_count = len(difference)
